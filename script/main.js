@@ -51,10 +51,26 @@ function drawStripes() {
   $('.stripes .stripe').addClass('active');
 }
 
+function showSocialLink(link) {
+  $(link).addClass('shown');
+}
+
+function showAllSocialLinks() {
+  var i = 0;
+  $('.social li').each(function() {
+    var link = this;
+    setTimeout(function() {
+      showSocialLink(link);
+    }, i * 100 + 3500);
+    i++;
+  })
+}
+
 $(document).ready(function() {
   setTimeout(function() {
     drawStripes();
     drawName();
     drawTitle();
+    showAllSocialLinks();
   }, 250);
 });

@@ -72,35 +72,42 @@
 }
 
 /**
- * NAV
+ * .social
  */
 
-nav {
+.social {
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
     font-size: 2em;
+    line-height: 1;
     padding: 0.25em;
 }
-nav ul,
-nav li {
+.social ul,
+.social li {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-nav ul {
+.social ul {
     display: block;
     float: right;
 }
-nav li {
+.social li {
+    position: relative;
     display: inline-block;
+    top: 1.75em;
+    transition: top 0.35s cubic-bezier(0.175, 0.885, 0.585, 1.650);
 }
-nav a {
+.social li.shown {
+    top: 0;
+}
+.social a {
     display: block;
     color: #1693A5;
     margin: 0.25em;
 }
-nav a:hover {
+.social a:hover {
     color: black;
 }
