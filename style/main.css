@@ -50,7 +50,7 @@
     height: 0;
     float: left;
     margin: 0;
-    transition: height 0.35s cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    transition: height 0.4s cubic-bezier(0.950, 0.050, 1.000, 0.035);
 }
 
 /* http://www.colourlovers.com/palette/3894777/H1 */
