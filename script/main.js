@@ -47,7 +47,16 @@ function drawTitle() {
   });
 }
 
+function drawStripes() {
+  $('.stripes .stripe').addClass('active');
+}
+
 $(document).ready(function() {
-  drawName();
-  drawTitle();
+  setTimeout(function() {
+    drawStripes();
+  }, 250);
+  setTimeout(function() {
+    drawName();
+    drawTitle();
+  }, 750);
 });

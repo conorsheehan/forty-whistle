@@ -23,7 +23,6 @@
     fill: transparent;
     stroke: black;
     stroke-opacity: 0;
-
     transition-property: stroke-dashoffset, fill;
     transition-duration: 1s, 2s;
     transition-timing-function: ease-in-out;
@@ -31,7 +30,6 @@
 
 .svg-title path {
     fill: transparent;
-
     transition-property: fill;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
@@ -44,11 +42,22 @@
     left: 50%;
     transform-origin: top;
     top: 50%;
+    width: 20%;
 }
+
 .stripes .stripe {
-    background: #FF4040;
-    width: 5em;
-    height: 100%;
+    background: transparent;
+    width: 33%;
+    height: 0;
     float: left;
-    margin: 2.5em;
+    margin: 0;
+    transition: height 0.35s linear;
+}
+
+.stripes .stripe.active {
+    height: 100%;
+}
+
+.stripes .stripe-red {
+    background: #FF4040;
 }
