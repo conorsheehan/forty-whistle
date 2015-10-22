@@ -36,11 +36,10 @@
 }
 
 .stripes {
-    height: 200%;
-    transform: rotate(30deg) translate(-50%, -50%);
+    height: 140%;
+    transform: translate(-50%, -50%) rotate(30deg);
     position: absolute;
     left: 50%;
-    transform-origin: top;
     top: 50%;
     width: 20%;
 }
@@ -51,7 +50,7 @@
     height: 0;
     float: left;
     margin: 0;
-    transition: height 0.35s linear;
+    transition: height 0.35s cubic-bezier(0.550, 0.055, 0.675, 0.190);
 }
 
 .stripes .stripe.active {

@@ -54,9 +54,7 @@ function drawStripes() {
 $(document).ready(function() {
   setTimeout(function() {
     drawStripes();
-  }, 250);
-  setTimeout(function() {
     drawName();
     drawTitle();
-  }, 750);
+  }, 250);
 });
