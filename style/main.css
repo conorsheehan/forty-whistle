@@ -1,0 +1,38 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.name-title {
+    position: absolute;
+    width: 80%;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.svg-name {
+    margin-bottom: 1em;
+}
+
+.svg-name path {
+    fill: transparent;
+    stroke: black;
+    stroke-opacity: 0;
+
+    transition-property: stroke-dashoffset, fill;
+    transition-duration: 1s, 2s;
+    transition-timing-function: ease-in-out;
+}
+
+.svg-title path {
+    fill: transparent;
+
+    transition-property: fill;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
