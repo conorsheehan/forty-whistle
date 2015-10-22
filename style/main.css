@@ -70,3 +70,37 @@
 .stripes .stripe-blue {
     background: #1693A5;
 }
+
+/**
+ * NAV
+ */
+
+nav {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-size: 2em;
+    padding: 0.25em;
+}
+nav ul,
+nav li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul {
+    display: block;
+    float: right;
+}
+nav li {
+    display: inline-block;
+}
+nav a {
+    display: block;
+    color: #1693A5;
+    margin: 0.25em;
+}
+nav a:hover {
+    color: black;
+}
