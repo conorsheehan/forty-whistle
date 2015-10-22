@@ -53,10 +53,20 @@
     transition: height 0.35s cubic-bezier(0.550, 0.055, 0.675, 0.190);
 }
 
+/* http://www.colourlovers.com/palette/3894777/H1 */
+
 .stripes .stripe.active {
     height: 100%;
 }
 
 .stripes .stripe-red {
     background: #FF4040;
+}
+
+.stripes .stripe-pink {
+    background: #FF817A;
+}
+
+.stripes .stripe-blue {
+    background: #1693A5;
 }
