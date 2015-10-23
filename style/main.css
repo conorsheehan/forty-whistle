@@ -1,3 +1,7 @@
+/**
+ * General
+ */
+
 .container {
     position: absolute;
     top: 0;
@@ -6,6 +10,10 @@
     bottom: 0;
     overflow: hidden;
 }
+
+/**
+ * Name and title
+ */
 
 .name-title {
     position: absolute;
@@ -36,6 +44,10 @@
     transition-timing-function: ease-in-out;
 }
 
+/**
+ * Stripes
+ */
+
 .stripes {
     height: 140%;
     transform: translate(-50%, -50%) rotate(30deg);
@@ -55,7 +67,7 @@
     transition: height 0.4s cubic-bezier(0.950, 0.050, 1.000, 0.035);
 }
 
-/* http://www.colourlovers.com/palette/3894777/H1 */
+/* Colors: http://www.colourlovers.com/palette/3894777/H1 */
 
 .stripes .stripe.active {
     height: 100%;
@@ -78,7 +90,7 @@
 }
 
 /**
- * .social
+ * Social Buttons
  */
 
 .social {
@@ -119,6 +131,10 @@
 .social a:hover {
     color: black;
 }
+
+/**
+ * Responsive
+ */
 
 @media screen and (orientation: portrait) {
     .name-title,
