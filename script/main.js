@@ -1,13 +1,26 @@
-var app = (function($) {
+var app = (function() {
+
+    "use strict";
+
+    /**
+     * Creates an each loop over an array.
+     * Iteratee arguments: (value, key, list)
+     * @param  {Array} arr
+     * @param  {Function} func - Iteratee function
+     */
+    function each(arr, func) {
+        for(var i=0; i<arr.length; i++) {
+            func(arr[i], i, arr);
+        }
+    }
 
     return {
         initialize: function() {
             var self = this;
-            $(document).ready(function() {
-                setTimeout(function() {
-                    self.startAnimations();
-                }, 250);
-            });
+
+            setTimeout(function() {
+                self.startAnimations();
+            }, 250);
 
             return this;
         },
@@ -25,16 +38,12 @@ var app = (function($) {
         /** Draw the name SVG */
         drawName: function() {
             var self = this,
-                $name = $('.svg-name'),
-                i = 0;
+                name = document.getElementById('svg-name');
 
-            $name.find('path').each(function() {
-                var letterPath = this;
+            each(name.childNodes, function(letterPath, i) {
                 setTimeout(function() {
-                    self.drawPath(letterPath);
+                    self.drawNameLetter(letterPath);
                 }, i * 150 + 250);
-
-                i += 1;
             });
 
             return this;
@@ -42,16 +51,13 @@ var app = (function($) {
 
         /** Draw the title SVG */
         drawTitle: function() {
-            var $title = $('.svg-title'),
-                i = 0;
+            var self = this,
+                title = document.getElementById('svg-title');
 
-            $title.find('path').each(function() {
-                var letterPath = this;
+            each(title.childNodes, function(letterPath, i) {
                 setTimeout(function() {
-                    $(letterPath).attr('class', 'shown');
+                    self.drawTitleLetter(letterPath);
                 }, i * 100 + 1000);
-
-                i += 1;
             });
 
             return this;
@@ -59,33 +65,40 @@ var app = (function($) {
 
         /** Draw the stripes */
         drawStripes: function() {
-            $('.stripes .stripe').addClass('shown');
+            var stripes = document.getElementsByClassName('stripe');
+
+            each(stripes, function(stripe) {
+                stripe.classList.add('shown');
+            });
+
             return this;
         },
 
         /** Social all the social links */
         showAllSocialLinks: function() {
             var self = this,
-                i = 0;
+                socialNav = document.getElementById('social'),
+                socialItems = socialNav.getElementsByTagName('li');
 
-            $('.social li').each(function() {
-              var link = this;
-              setTimeout(function() {
-                self.showSocialLink(link);
-              }, i * 100 + 3500);
-
-              i++;
+            each(socialItems, function(item, i) {
+                setTimeout(function() {
+                    self.showSocialItem(item);
+                }, i * 100 + 3500);
             });
 
             return this;
         },
 
+        /** Draw a single letter path in the title SVG */
+        drawTitleLetter: function(letterPath) {
+            letterPath.classList.add('shown');
+        },
+
        /**
-        * Draw a path
+        * Draw a single letter path in the name SVG
         * Will draw the stroke if the path has a stroke
-        * Also sets the path to .shown
         */
-        drawPath: function(path) {
+        drawNameLetter: function(path) {
             var length = path.getTotalLength();
             // Clear any previous transition
             path.style.transition = path.style.WebkitTransition = 'none';
@@ -99,18 +112,18 @@ var app = (function($) {
             path.style.transition = path.style.WebkitTransition = '';
             // Go!
             path.style.strokeDashoffset = '';
-            $(path).attr('class', 'shown');
+            path.classList.add('shown');
 
             return this;
         },
 
-        /** Show a single social link */
-        showSocialLink: function(link) {
-            $(link).addClass('shown');
+        /** Show a single social item */
+        showSocialItem: function(item) {
+            item.classList.add('shown');
             return this;
         }
     };
 
-})($);
+})();
 
 app.initialize();

@@ -18,6 +18,7 @@
 .name-title {
     position: absolute;
     width: 80%;
+    max-width: 80em;
     margin: auto;
     top: 50%;
     left: 50%;
@@ -25,11 +26,11 @@
             transform: translate(-50%, -50%);
 }
 
-.svg-name {
+#svg-name {
     margin-bottom: 1em;
 }
 
-.svg-name path {
+#svg-name path {
     fill: transparent;
     stroke: black;
     stroke-opacity: 0;
@@ -41,14 +42,14 @@
             transition-timing-function: ease-in-out;
 
 }
-.svg-name path.shown {
+#svg-name path.shown {
     stroke-dashoffset: 0;
     stroke-width: 1px;
     stroke-opacity: 1;
     fill: black;
 }
 
-.svg-title path {
+#svg-title path {
     fill: transparent;
     -webkit-transition-property: fill;
             transition-property: fill;
@@ -57,7 +58,7 @@
     -webkit-transition-timing-function: ease-in-out;
             transition-timing-function: ease-in-out;
 }
-.svg-title path.shown {
+#svg-title path.shown {
     fill: black;
 }
 
@@ -112,7 +113,7 @@
  * Social Buttons
  */
 
-.social {
+#social {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -122,34 +123,34 @@
     padding: 0.25em;
     overflow: hidden;
 }
-.social ul,
-.social li {
+#social ul,
+#social li {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.social ul {
+#social ul {
     display: block;
     float: right;
 }
-.social li {
+#social li {
     position: relative;
     display: inline-block;
     top: 1.75em;
     -webkit-transition: top 0.35s cubic-bezier(0.175, 0.885, 0.585, 1.650);
             transition: top 0.35s cubic-bezier(0.175, 0.885, 0.585, 1.650);
 }
-.social li.shown {
+#social li.shown {
     top: 0;
 }
-.social a {
+#social a {
     display: block;
     color: #00b4cc;
     padding: 0.25em;
     -webkit-transition: color 0.1s linear;
             transition: color 0.1s linear;
 }
-.social a:hover {
+#social a:hover {
     color: black;
 }
 
@@ -167,16 +168,16 @@
                 transform: translate(-50%, -50%) rotate(60deg);
         height: 130vw;
     }
-    .social ul {
+    #social ul {
         float: none;
         text-align: center;
     }
-    .social {
+    #social {
         font-size: 3.125em;
     }
 }
 @media screen and (orientation: portrait) and (max-width: 500px) {
-    .social {
+    #social {
         font-size: 10vw;
     }
 }
