@@ -70,11 +70,11 @@
 }
 
 .stripes .stripe-blue {
-    background: #1693A5;
+    background: #00b4cc;
 }
 
 .stripes .stripe-yellow {
-    background: #f1c40f
+    background: #f1c40f;
 }
 
 /**
@@ -112,7 +112,7 @@
 }
 .social a {
     display: block;
-    color: #1693A5;
+    color: #00b4cc;
     padding: 0.25em;
 }
 .social a:hover {

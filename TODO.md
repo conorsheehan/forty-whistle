@@ -8,3 +8,4 @@
 - [ ] Find better icons
 - [ ] Color schemes
 - [ ] Update social profiles
+- [ ] Remove jQuery
