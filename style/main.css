@@ -88,7 +88,7 @@
 
 /* Colors: http://www.colourlovers.com/palette/3894777/H1 */
 
-.stripes .stripe.active {
+.stripes .stripe.shown {
     height: 100%;
 }
 
