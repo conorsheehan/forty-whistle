@@ -21,7 +21,8 @@
     margin: auto;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 .svg-name {
@@ -32,16 +33,32 @@
     fill: transparent;
     stroke: black;
     stroke-opacity: 0;
-    transition-property: stroke-dashoffset, fill;
-    transition-duration: 1s, 2s;
-    transition-timing-function: ease-in-out;
+    -webkit-transition-property: stroke-dashoffset, fill;
+            transition-property: stroke-dashoffset, fill;
+    -webkit-transition-duration: 1s, 2s;
+            transition-duration: 1s, 2s;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+
+}
+.svg-name path.shown {
+    stroke-dashoffset: 0;
+    stroke-width: 1px;
+    stroke-opacity: 1;
+    fill: black;
 }
 
 .svg-title path {
     fill: transparent;
-    transition-property: fill;
-    transition-duration: 1s;
-    transition-timing-function: ease-in-out;
+    -webkit-transition-property: fill;
+            transition-property: fill;
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+}
+.svg-title path.shown {
+    fill: black;
 }
 
 /**
@@ -50,7 +67,8 @@
 
 .stripes {
     height: 140%;
-    transform: translate(-50%, -50%) rotate(30deg);
+    -webkit-transform: translate(-50%, -50%) rotate(30deg);
+            transform: translate(-50%, -50%) rotate(30deg);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -64,7 +82,8 @@
     height: 0;
     float: left;
     margin: 0;
-    transition: height 0.4s cubic-bezier(0.950, 0.050, 1.000, 0.035);
+    -webkit-transition: height 0.4s cubic-bezier(0.950, 0.050, 1.000, 0.035);
+            transition: height 0.4s cubic-bezier(0.950, 0.050, 1.000, 0.035);
 }
 
 /* Colors: http://www.colourlovers.com/palette/3894777/H1 */
@@ -117,7 +136,8 @@
     position: relative;
     display: inline-block;
     top: 1.75em;
-    transition: top 0.35s cubic-bezier(0.175, 0.885, 0.585, 1.650);
+    -webkit-transition: top 0.35s cubic-bezier(0.175, 0.885, 0.585, 1.650);
+            transition: top 0.35s cubic-bezier(0.175, 0.885, 0.585, 1.650);
 }
 .social li.shown {
     top: 0;
@@ -126,7 +146,8 @@
     display: block;
     color: #00b4cc;
     padding: 0.25em;
-    transition: color 0.1s linear;
+    -webkit-transition: color 0.1s linear;
+            transition: color 0.1s linear;
 }
 .social a:hover {
     color: black;
@@ -142,7 +163,8 @@
         top: 45%;
     }
     .stripes {
-        transform: translate(-50%, -50%) rotate(60deg);
+        -webkit-transform: translate(-50%, -50%) rotate(60deg);
+                transform: translate(-50%, -50%) rotate(60deg);
         height: 130vw;
     }
     .social ul {
