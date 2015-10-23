@@ -82,7 +82,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    font-size: 2em;
+    font-size: 2.5em;
     line-height: 1;
     padding: 0.25em;
     overflow: hidden;
@@ -123,5 +123,13 @@
     .social ul {
         float: none;
         text-align: center;
+    }
+    .social {
+        font-size: 3.125em;
+    }
+}
+@media screen and (orientation: portrait) and (max-width: 500px) {
+    .social {
+        font-size: 10vw;
     }
 }
