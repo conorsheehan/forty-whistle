@@ -111,3 +111,10 @@
 .social a:hover {
     color: black;
 }
+
+@media screen and (max-width: 375px) {
+    .social ul {
+        float: none;
+        text-align: center;
+    }
+}
