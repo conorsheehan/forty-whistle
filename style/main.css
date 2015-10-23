@@ -43,6 +43,7 @@
     left: 50%;
     top: 50%;
     width: 20%;
+    max-width: 12.5em;
 }
 
 .stripes .stripe {
