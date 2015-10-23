@@ -116,6 +116,10 @@
 }
 
 @media screen and (orientation: portrait) {
+    .name-title,
+    .stripes {
+        top: 45%;
+    }
     .stripes {
         transform: translate(-50%, -50%) rotate(60deg);
         height: 130vw;
