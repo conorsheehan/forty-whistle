@@ -114,6 +114,7 @@
     display: block;
     color: #00b4cc;
     padding: 0.25em;
+    transition: color 0.1s linear;
 }
 .social a:hover {
     color: black;
