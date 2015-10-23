@@ -106,7 +106,7 @@
 .social a {
     display: block;
     color: #1693A5;
-    margin: 0.25em;
+    padding: 0.25em;
 }
 .social a:hover {
     color: black;
