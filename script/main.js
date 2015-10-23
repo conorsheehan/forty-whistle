@@ -15,12 +15,31 @@ var app = (function() {
     }
 
     return {
+
+        /** Durations of animations */
+        durations: {
+            nameLetter: 2000,
+            titleLetter: 1000,
+            socialItem: 350
+        },
+
+        /** Delays before firing animations */
+        delays: {
+            initial: 250,
+            name: 0,
+            title: 750,
+            nameLetter: 100,
+            titleLetter: 50,
+            social: -1000,
+            socialItem: 100
+        },
+
         initialize: function() {
             var self = this;
 
             setTimeout(function() {
                 self.startAnimations();
-            }, 250);
+            }, this.delays.initial);
 
             return this;
         },
@@ -41,9 +60,10 @@ var app = (function() {
                 name = document.getElementById('svg-name');
 
             each(name.childNodes, function(letterPath, i) {
+                var timeout = i * self.delays.nameLetter + self.delays.name + self.delays.initial;
                 setTimeout(function() {
                     self.drawNameLetter(letterPath);
-                }, i * 150 + 250);
+                }, timeout);
             });
 
             return this;
@@ -55,9 +75,10 @@ var app = (function() {
                 title = document.getElementById('svg-title');
 
             each(title.childNodes, function(letterPath, i) {
+                var timeout = i * self.delays.titleLetter + self.delays.title + self.delays.initial;
                 setTimeout(function() {
                     self.drawTitleLetter(letterPath);
-                }, i * 100 + 1000);
+                }, timeout);
             });
 
             return this;
@@ -78,12 +99,14 @@ var app = (function() {
         showAllSocialLinks: function() {
             var self = this,
                 socialNav = document.getElementById('social'),
-                socialItems = socialNav.getElementsByTagName('li');
+                socialItems = socialNav.getElementsByTagName('li'),
+                nameAndTitleDuration = this.getNameAndTitleDuration();
 
             each(socialItems, function(item, i) {
+                var timeout = i * self.delays.socialItem + self.delays.social + nameAndTitleDuration + self.delays.initial;
                 setTimeout(function() {
                     self.showSocialItem(item);
-                }, i * 100 + 3500);
+                }, timeout);
             });
 
             return this;
@@ -121,6 +144,18 @@ var app = (function() {
         showSocialItem: function(item) {
             item.classList.add('shown');
             return this;
+        },
+
+        /** Returns the total duration of the name and title animation */
+        getNameAndTitleDuration: function() {
+            var name = document.getElementById('svg-name'),
+                title = document.getElementById('svg-title'),
+                nameLength = name.childNodes.length,
+                titleLength = title.childNodes.length,
+                nameDuration = this.delays.name + this.durations.nameLetter + this.delays.nameLetter * nameLength,
+                titleDuration = this.delays.title + this.durations.titleLetter + this.delays.titleLetter * titleLength;
+
+            return Math.max(nameDuration, titleDuration);
         }
     };
 
