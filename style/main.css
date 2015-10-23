@@ -114,7 +114,11 @@
     color: black;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (orientation: portrait) {
+    .stripes {
+        transform: translate(-50%, -50%) rotate(60deg);
+        height: 130vw;
+    }
     .social ul {
         float: none;
         text-align: center;
